@@ -2,13 +2,13 @@ package com.jjmoey.warehousedemo.commons.events.order;
 
 import com.jjmoey.warehousedemo.commons.dto.OrderLineDto;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderCreatedEventDto {
     private Integer orderId;
     private String orderReference;
-    private Set<OrderLineDto> items;
+    private List<OrderLineDto> items;
 
     public Integer getOrderId() {
         return orderId;
@@ -26,14 +26,14 @@ public class OrderCreatedEventDto {
         this.orderReference = orderReference;
     }
 
-    public Set<OrderLineDto> getItems() {
+    public List<OrderLineDto> getItems() {
         if (items == null) {
-            items = new HashSet<>();
+            items = new ArrayList<>();
         }
         return items;
     }
 
-    public void setItems(Set<OrderLineDto> items) {
+    public void setItems(List<OrderLineDto> items) {
         this.items = items;
     }
 }
