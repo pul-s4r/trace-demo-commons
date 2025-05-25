@@ -1,6 +1,6 @@
 package com.jjmoey.warehousedemo.commons.events.order;
 
-public class OrderItemStatusUpdatedDto {
+public class OrderItemStatusUpdatedEventDto {
     private Integer orderId;
     private String itemSku;
     private String status;
