@@ -1,6 +1,8 @@
 package com.jjmoey.warehousedemo.commons.events.order;
 
-public class OrderItemStatusUpdatedEventDto {
+import com.jjmoey.warehousedemo.commons.AbstractEventDto;
+
+public class OrderItemStatusUpdatedEventDto extends AbstractEventDto {
     private Integer orderId;
     private String itemSku;
     private String status;
@@ -28,4 +30,10 @@ public class OrderItemStatusUpdatedEventDto {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public Integer getKey() { return orderId; }
+
+    @Override
+    public String getType() { return OrderItemStatusUpdatedEventDto.class.getName(); }
 }

@@ -1,11 +1,12 @@
 package com.jjmoey.warehousedemo.commons.events.order;
 
+import com.jjmoey.warehousedemo.commons.AbstractEventDto;
 import com.jjmoey.warehousedemo.commons.dto.OrderLineDto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderCreatedEventDto {
+public class OrderCreatedEventDto extends AbstractEventDto {
     private Integer orderId;
     private String orderReference;
     private List<OrderLineDto> items;
@@ -36,4 +37,10 @@ public class OrderCreatedEventDto {
     public void setItems(List<OrderLineDto> items) {
         this.items = items;
     }
+
+    @Override
+    public Integer getKey() { return orderId; }
+
+    @Override
+    public String getType() { return OrderCreatedEventDto.class.getName(); }
 }

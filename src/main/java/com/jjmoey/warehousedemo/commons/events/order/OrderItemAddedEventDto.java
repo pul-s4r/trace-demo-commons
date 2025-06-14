@@ -1,8 +1,9 @@
 package com.jjmoey.warehousedemo.commons.events.order;
 
+import com.jjmoey.warehousedemo.commons.AbstractEventDto;
 import com.jjmoey.warehousedemo.commons.dto.OrderLineDto;
 
-public class OrderItemAddedEventDto {
+public class OrderItemAddedEventDto extends AbstractEventDto {
     private Integer orderId;
     private OrderLineDto item;
 
@@ -21,4 +22,10 @@ public class OrderItemAddedEventDto {
     public void setItem(OrderLineDto item) {
         this.item = item;
     }
+
+    @Override
+    public Integer getKey() { return orderId; }
+
+    @Override
+    public String getType() { return OrderItemAddedEventDto.class.getName(); }
 }
